@@ -1,4 +1,6 @@
 /.internal
+/.vscode
+/debugger
 /build
 .externalToolBuilders
 .DS_Store
