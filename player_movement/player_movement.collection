@@ -1,10 +1,10 @@
-name: "main"
-collection_instances {
-  id: "player_movement"
-  collection: "/player_movement/player_movement.collection"
+name: "player_movement"
+instances {
+  id: "player"
+  prototype: "/player_movement/player.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: 165.0
+    y: 116.0
     z: 0.0
   }
   rotation {
