@@ -1,5 +1,5 @@
 images {
-  image: "/keyboard_input/button_sprite.png"
+  image: "/assets/sprites/button_sprite.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

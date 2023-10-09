@@ -1,7 +1,7 @@
 name: "main"
 collection_instances {
-  id: "keyboard_input"
-  collection: "/keyboard_input/keyboard_input.collection"
+  id: "drag_and_drop"
+  collection: "/drag_and_drop/drag_and_drop.collection"
   position {
     x: 0.0
     y: 0.0

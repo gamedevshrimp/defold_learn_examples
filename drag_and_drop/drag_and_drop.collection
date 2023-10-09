@@ -1,0 +1,102 @@
+name: "drag_and_drop"
+instances {
+  id: "dragable_object"
+  prototype: "/drag_and_drop/dragable_object.go"
+  position {
+    x: 153.0
+    y: 125.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "cursor_object"
+  prototype: "/drag_and_drop/cursor_object.go"
+  position {
+    x: 84.0
+    y: 60.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "dragable_object1"
+  prototype: "/drag_and_drop/dragable_object.go"
+  position {
+    x: 213.0
+    y: 247.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "dragable_object2"
+  prototype: "/drag_and_drop/dragable_object.go"
+  position {
+    x: 339.0
+    y: 151.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "dragable_object3"
+  prototype: "/drag_and_drop/dragable_object.go"
+  position {
+    x: 65.0
+    y: 257.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0
