@@ -12,12 +12,12 @@ end
 function on_message(self, message_id, message, sender)
     if message_id == hash("trigger_response") then
         if message.enter then
-            -- take action for entry
+            go.set_scale(1.2, message.other_id)
             print("I am now inside", message.other_id)
 			self.can_i_drag_it = true
 			self.child_id = message.other_id
         else
-            -- take action for exit
+            go.set_scale(1, message.other_id)
             print("I am now outside", message.other_id)
 			self.can_i_drag_it = false
         end
