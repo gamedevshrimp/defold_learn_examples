@@ -1,10 +1,10 @@
-name: "main"
-collection_instances {
-  id: "touch_movement"
-  collection: "/touch_movement/touch_movement.collection"
+name: "touch_movement"
+instances {
+  id: "object"
+  prototype: "/touch_movement/object.go"
   position {
-    x: 0.0
-    y: 0.0
+    x: 92.0
+    y: 72.0
     z: 0.0
   }
   rotation {
