@@ -1,0 +1,17 @@
+images {
+  image: "/assets/sprites/physics_section_assets/board.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/sprites/physics_section_assets/box.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/sprites/physics_section_assets/bg.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_4
+}
+margin: 0
+extrude_borders: 1
+inner_padding: 0
+max_page_width: 0
+max_page_height: 0

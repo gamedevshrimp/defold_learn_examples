@@ -1,7 +1,7 @@
 name: "main"
 collection_instances {
-  id: "touch_movement"
-  collection: "/touch_movement/touch_movement.collection"
+  id: "physics_techniques"
+  collection: "/physics_techniques/physics_techniques.collection"
   position {
     x: 0.0
     y: 0.0
