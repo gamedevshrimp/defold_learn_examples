@@ -1,6 +1,7 @@
 function init(self)
 	gui.set_render_order(0)
-	msg.post('main:/go', 'start_unfade')
+	-- msg.post('main:/go', 'start_unfade')
+	msg.post(".", "acquire_input_focus")
 end
 
 function final(self)
@@ -9,32 +10,20 @@ function final(self)
 	-- Remove this function if not needed
 end
 
-function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
-end
-
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Learn more: https://defold.com/manuals/message-passing/
-	-- Remove this function if not needed
-end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+	if action_id == hash("touch") and action.pressed then
+		if gui.pick_node(gui.get_node('btn_keyboard_imput'), action.x, action.y) then
+			msg.post('main:/go', 'start_fade')
+			timer.delay(transition_time, false, function() msg.post('main:/level_loader', 'load_level', { level_id = '#collection_keyboard_input_loader' }) end)
+		elseif gui.pick_node(gui.get_node('btn_drag_and_drop'), action.x, action.y) then
+			msg.post('main:/go', 'start_fade')
+			timer.delay(transition_time, false, function() msg.post('main:/level_loader', 'load_level', { level_id = '#collection_drag_and_drop_loader' }) end)
+		elseif gui.pick_node(gui.get_node('btn_player_movement'), action.x, action.y) then
+			msg.post('main:/go', 'start_fade')
+			timer.delay(transition_time, false, function() msg.post('main:/level_loader', 'load_level', { level_id = '#collection_player_movement_loader' }) end)
+		end
+	end
 end
 
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Learn more: https://defold.com/manuals/hot-reload/
-	-- Remove this function if not needed
-end
+

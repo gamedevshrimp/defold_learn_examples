@@ -1,5 +1,4 @@
 function init(self)
-	self.is_first_time_load = true
 	msg.post(".", "acquire_input_focus")
 	msg.post("#collection_menu_loader", "load")
 end
@@ -13,23 +12,18 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("show_game") then
 		msg.post("#collection_level_loader", "load")
-		-- msg.post("#collection_menu_loader", "unload")		
+		msg.post("#collection_menu_loader", "unload")		
 	elseif message_id == hash("show_menu") then
 		msg.post("#collection_menu_loader", "load")
 		msg.post("#collection_level_loader", "unload")		
+
+	elseif message_id == hash("load_level") then
+		print('loading ' .. message.level_id)
+		msg.post(message.level_id, "load")
+		msg.post("#collection_level_loader", "unload")
+		
 	elseif message_id == hash("proxy_loaded") then
-		if self.is_first_time_load == true then
-			self.is_first_time_load = false
-			print("proxy_loaded", sender)
 			msg.post(sender, "enable")
-		else
-			msg.post("#collection_menu_loader", "unload")	
-			print('debug')
-			print("proxy_loaded", sender)
-			msg.post(sender, "enable")	
-		end
-	elseif message_id == hash("proxy_unloaded") then
-		print("proxy_unloaded", sender)
 	end
 end
 
