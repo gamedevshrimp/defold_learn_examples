@@ -1,0 +1,66 @@
+local HASH_LEFT = hash("left")
+local HASH_RIGHT = hash("right")
+local HASH_UP = hash("up")
+local HASH_DOWN = hash("down")
+
+local function shadow_animation()
+	local start_pos = go.get_position()
+	local target_pos = vmath.vector3(start_pos.x + 30, start_pos.y - 15, 0.1)
+	go.animate('/shadow', 'position', go.PLAYBACK_ONCE_FORWARD, target_pos, go.EASING_OUTCUBIC, 1)
+end
+
+function init(self)
+	msg.post("#", "acquire_input_focus")
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	local position = go.get_position()
+
+	self.input_multyplaer = action.value
+	if action_id == HASH_LEFT or action_id == HASH_RIGHT or action_id == HASH_UP or action_id == HASH_DOWN then
+		local start_pos = vmath.vector3(17, -9, 0.1)
+		local target_pos = vmath.vector3(start_pos.x + 30, start_pos.y - 15, 0.1)
+		if action.pressed then
+			go.animate('/shadow', 'position', go.PLAYBACK_ONCE_FORWARD, target_pos, go.EASING_OUTCUBIC, 1)
+			go.animate('/shadow#sprite', 'tint.w', go.PLAYBACK_ONCE_FORWARD, 0.5, go.EASING_OUTCUBIC, 1)
+		elseif action.released then
+			go.animate('/shadow', 'position', go.PLAYBACK_ONCE_FORWARD, start_pos, go.EASING_OUTCUBIC, 1)
+			go.animate('/shadow#sprite', 'tint.w', go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_OUTCUBIC, 1)
+		end
+	end
+
+	go.set_position(position)
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

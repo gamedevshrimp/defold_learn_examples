@@ -1,0 +1,17 @@
+images {
+  image: "/assets/sprites/spaceship/Kla\'ed - Battlecruiser - Base.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/sprites/spaceship/spaceship.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/sprites/spaceship/spaceship_shadow.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
+max_page_width: 0
+max_page_height: 0

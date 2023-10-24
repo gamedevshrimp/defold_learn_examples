@@ -3,6 +3,11 @@ local HASH_RIGHT = hash("right")
 local HASH_UP = hash("up")
 local HASH_DOWN = hash("down")
 
+local function shadow_animation()
+	local start_pos = go.get_position()
+	local target_pos = vmath.vector3(start_pos.x + 30, start_pos.y - 15, 0.1)
+	go.animate('/shadow', 'scale', go.PLAYBACK_ONCE_FORWARD, vmath.vector3(1, 1, 1), go.EASING_OUTCUBIC, 1)
+end
 function init(self)
 	msg.post("#", "acquire_input_focus")
 	self.speed = 3

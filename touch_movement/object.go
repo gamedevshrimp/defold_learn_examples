@@ -16,8 +16,8 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "tile_set: \"/assets/sprites/space_shooter.atlas\"\n"
-  "default_animation: \"Kla\\\'ed - Battlecruiser - Base\"\n"
+  data: "tile_set: \"/assets/sprites/spaceship/space_shooter.atlas\"\n"
+  "default_animation: \"spaceship\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
